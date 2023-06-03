@@ -6,7 +6,6 @@ using namespace sf;
 
 const int H = 21;
 const int W = 19;
-
 const int ts = 25;
 
 int q = 0;
