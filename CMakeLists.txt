@@ -7,6 +7,18 @@ FetchContent_Declare(SFML
     GIT_TAG 2.6.x)
 FetchContent_MakeAvailable(SFML)
 
+configure_file(${CMAKE_CURRENT_SOURCE_DIR}/src/Paint/score.png
+        ${CMAKE_CURRENT_BINARY_DIR} COPYONLY)
+
+configure_file(${CMAKE_CURRENT_SOURCE_DIR}/src/Paint/title.png
+        ${CMAKE_CURRENT_BINARY_DIR} COPYONLY)
+
+configure_file(${CMAKE_CURRENT_SOURCE_DIR}/src/Paint/youlose.png
+        ${CMAKE_CURRENT_BINARY_DIR} COPYONLY)
+
+configure_file(${CMAKE_CURRENT_SOURCE_DIR}/src/Paint/youwin.png
+        ${CMAKE_CURRENT_BINARY_DIR} COPYONLY)
+
 add_executable(PacMan src/main.cpp)
 target_link_libraries(PacMan PRIVATE sfml-graphics)
 target_compile_features(PacMan PRIVATE cxx_std_17)
