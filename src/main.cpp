@@ -23,11 +23,11 @@ String EasyMap[H] = {
 	"A AA A AAAAA A AA A",
 	"A    A   A   A    A",
 	"AAAA AAA A AAA AAAA",
-	"BBBA A       A ABBB",
+	"BBBA A   6   A ABBB",
 	"AAAA A AAAAA A AAAA",
 	"BBBB   ABBBA   BBBB",
 	"AAAA A AAAAA A AAAA",
-	"BBBA A       A ABBB",
+	"BBBA A   5   A ABBB",
 	"AAAA A AAAAA A AAAA",
 	"A        A        A",
 	"A AA AAA A AAA AA A",
@@ -47,11 +47,11 @@ String NoTeleport[H] = {
 	"A AA A AAAAA A AA A",
 	"A    A       A    A",
 	"AA A AAAAAAAAA A AA",
-	"A  A A       A A  A",
+	"A  A A   6   A A  A",
 	"A AAAA AA AA AAAA A",
 	"A A    A   A    A A",
 	"A AAAA AA AA AAAA A",
-	"A  A A       A A  A",
+	"A  A A   5   A A  A",
 	"AA A A AAAAA A A AA",
 	"A        A        A",
 	"A AA AAA A AAA AA A",
@@ -71,11 +71,11 @@ String ChaoticMap[H] = {
 	"A                 A",
 	"A                 A",
 	"A                 A",
+	"A        6        A",
 	"A                 A",
 	"A                 A",
 	"A                 A",
-	"A                 A",
-	"A                 A",
+	"A        5        A",
 	"A                 A",
 	"A                 A",
 	"A                 A",
@@ -186,6 +186,10 @@ void playGame() {
 					plat.setTextureRect(IntRect(ts * 5, ts * en.rotate[2], ts, ts));
 				if (MapPack[mapId][i][j] == '4')
 					plat.setTextureRect(IntRect(ts * 5, ts * en.rotate[3], ts, ts));
+				if (MapPack[mapId][i][j] == '5')
+					plat.setTextureRect(IntRect(ts * 5, ts * en.rotate[4], ts, ts));
+				if (MapPack[mapId][i][j] == '6')
+					plat.setTextureRect(IntRect(ts * 5, ts * en.rotate[5], ts, ts));
 				if (MapPack[mapId][i][j] == 'B') continue;
 
 				plat.setPosition(j * ts, i * ts);
