@@ -6,7 +6,7 @@
 void Enemy::update() {
 	ti++;
 	if (ti >= 300) {
-		for (int i = 0; i < 4; i++) {
+		for (int i = 0; i < 6; i++) {
 			rotate[i] = rand() % 4 + 1;
 
 			newx[i] = x[i];
@@ -31,7 +31,7 @@ void Enemy::update() {
 		ti = 0;
 	}
 
-	for (int i = 0; i < 4; i++) {
+	for (int i = 0; i < 6; i++) {
 		if (MapPack[mapId][newy[i]][newx[i]] == ' ' ||
 			MapPack[mapId][newy[i]][newx[i]] == 'B' ||
 			MapPack[mapId][newy[i]][newx[i]] == 'C') {
@@ -46,6 +46,8 @@ void Enemy::update() {
 			if (i == 1) MapPack[mapId][newy[i]][newx[i]] = '2';
 			if (i == 2) MapPack[mapId][newy[i]][newx[i]] = '3';
 			if (i == 3) MapPack[mapId][newy[i]][newx[i]] = '4';
+			if (i == 4) MapPack[mapId][newy[i]][newx[i]] = '5';
+			if (i == 5) MapPack[mapId][newy[i]][newx[i]] = '6';
 
 			x[i] = newx[i];
 			y[i] = newy[i];
@@ -63,6 +65,8 @@ void Enemy::update() {
 			if (i == 1) MapPack[mapId][newy[i]][newx[i]] = '2';
 			if (i == 2) MapPack[mapId][newy[i]][newx[i]] = '3';
 			if (i == 3) MapPack[mapId][newy[i]][newx[i]] = '4';
+			if (i == 4) MapPack[mapId][newy[i]][newx[i]] = '5';
+			if (i == 5) MapPack[mapId][newy[i]][newx[i]] = '6';
 
 			x[i] = newx[i];
 			y[i] = newy[i];
