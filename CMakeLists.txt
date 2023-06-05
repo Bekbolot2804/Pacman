@@ -7,19 +7,16 @@ FetchContent_Declare(SFML
     GIT_TAG 2.6.x)
 FetchContent_MakeAvailable(SFML)
 
-configure_file(${CMAKE_CURRENT_SOURCE_DIR}/src/Paint/score.png
+configure_file(${CMAKE_CURRENT_SOURCE_DIR}/src/Paint/Sprites.png
         ${CMAKE_CURRENT_BINARY_DIR} COPYONLY)
 
-configure_file(${CMAKE_CURRENT_SOURCE_DIR}/src/Paint/sprites.png
+configure_file(${CMAKE_CURRENT_SOURCE_DIR}/src/Paint/YouLose.png
         ${CMAKE_CURRENT_BINARY_DIR} COPYONLY)
 
-configure_file(${CMAKE_CURRENT_SOURCE_DIR}/src/Paint/youlose.png
+configure_file(${CMAKE_CURRENT_SOURCE_DIR}/src/Paint/YouWin.png
         ${CMAKE_CURRENT_BINARY_DIR} COPYONLY)
 
-configure_file(${CMAKE_CURRENT_SOURCE_DIR}/src/Paint/youwin.png
-        ${CMAKE_CURRENT_BINARY_DIR} COPYONLY)
-
-add_executable(PacMan src/main.cpp "src/Enemy/Enemy.cpp" "src/Enemy/Enemy.h" "src/Player/Player.cpp" "src/Player/Player.h" "src/Maps.h")
+add_executable(PacMan src/main.cpp "src/Enemy/Enemy.cpp" "src/Enemy/Enemy.h" "src/Player/Player.cpp" "src/Player/Player.h")
 target_link_libraries(PacMan PRIVATE sfml-graphics)
 target_compile_features(PacMan PRIVATE cxx_std_17)
 if (WIN32 AND BUILD_SHARED_LIBS)
