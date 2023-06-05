@@ -1,20 +1,20 @@
-cmake_minimum_required(VERSION 3.23)
+#ifndef PLAYER_H
+#define PLAYER_H
 
-set(project "Enemy")
-project(${project})
+#include <SFML/Graphics.hpp>
 
-set(CMAKE_CXX_STANDARD 17)
+bool extern life;
+int extern q;
+int extern mapId;
+sf::String extern* MapPack[3];
 
-set(${project}_SOURCES
-        Enemy.cpp)
+class Player {
+public:
+    float frame = 0;
+    int x = 9, y = 15;
+    int newx = 0, newy = 0;
+    int rotate = 1, ti = 0;
+    void update();
+};
 
-set(${project}_HEADERS
-        Enemy.h)
-
-set(${project}_SOURCE_LIST
-        ${${project}_SOURCES}
-        ${${project}_HEADERS})
-
-add_library(${project}
-        STATIC
-        ${${project}_SOURCE_LIST})
+#endif //PLAYER_H
