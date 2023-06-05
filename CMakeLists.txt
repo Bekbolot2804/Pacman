@@ -10,7 +10,7 @@ FetchContent_MakeAvailable(SFML)
 configure_file(${CMAKE_CURRENT_SOURCE_DIR}/src/Paint/score.png
         ${CMAKE_CURRENT_BINARY_DIR} COPYONLY)
 
-configure_file(${CMAKE_CURRENT_SOURCE_DIR}/src/Paint/title.png
+configure_file(${CMAKE_CURRENT_SOURCE_DIR}/src/Paint/sprites.png
         ${CMAKE_CURRENT_BINARY_DIR} COPYONLY)
 
 configure_file(${CMAKE_CURRENT_SOURCE_DIR}/src/Paint/youlose.png
@@ -19,7 +19,7 @@ configure_file(${CMAKE_CURRENT_SOURCE_DIR}/src/Paint/youlose.png
 configure_file(${CMAKE_CURRENT_SOURCE_DIR}/src/Paint/youwin.png
         ${CMAKE_CURRENT_BINARY_DIR} COPYONLY)
 
-add_executable(PacMan src/main.cpp)
+add_executable(PacMan src/main.cpp "src/Enemy/Enemy.cpp" "src/Enemy/Enemy.h" "src/Player/Player.cpp" "src/Player/Player.h" "src/Maps.h")
 target_link_libraries(PacMan PRIVATE sfml-graphics)
 target_compile_features(PacMan PRIVATE cxx_std_17)
 if (WIN32 AND BUILD_SHARED_LIBS)
