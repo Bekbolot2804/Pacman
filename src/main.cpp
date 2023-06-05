@@ -9,8 +9,6 @@ using namespace sf;
 int q = 0;
 bool life = true;
 
-using namespace sf;
-
 const int H = 21;
 const int W = 19;
 const int ts = 25;
@@ -105,7 +103,7 @@ int countScoreToWin() {
 
 int menu() {
 	int input = 0;
-	std::cout << "Available difficulties:\n\t1)Easy (4 ghosts, easy map)\n\t2)Medium (4 ghosts, hard map)\n\t3)Hard (6 ghosts, hard map)\n\t4)*Impossible*\n\t5)Exit\nChoose your difficulty: ";
+	std::cout << "Available difficulties:\n\t1)Easy (regular map)\n\t2)Medium (map with no teleports)\n\t3)Hard (blank chaotic map)\nChoose your difficulty (type 4 to exit): ";
 	std::cin >> input;
 	switch (input) {
 	case 1:
@@ -115,12 +113,9 @@ int menu() {
 		mapId = 1;
 		break;
 	case 3:
-		mapId = 1;
-		break;
-	case 4:
 		mapId = 2;
 		break;
-	case 5:
+	case 4:
 		break;
 	default:
 		std::cout << "wrong input\n";
@@ -134,7 +129,7 @@ void playGame() {
 	q = 0;
 
 	srand(time(0));
-	RenderWindow window(VideoMode(W * ts, H * ts), "PacMan!");
+	RenderWindow window(VideoMode(W * ts, H * ts), "Pacman");
 
 	Texture t;
 	t.loadFromFile("sprites.png");
@@ -209,7 +204,7 @@ void playGame() {
 }
 
 int main() {
-	while (menu() != 5) {
+	while (menu() != 4) {
 		playGame();
 	}
 	return 0;
