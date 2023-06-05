@@ -132,16 +132,16 @@ void playGame() {
 	RenderWindow window(VideoMode(W * ts, H * ts), "Pacman");
 
 	Texture t;
-	t.loadFromFile("sprites.png");
+	t.loadFromFile("Sprites.png");
 	Sprite plat(t);
 
 	Texture yw;
-	yw.loadFromFile("youwin.png");
+	yw.loadFromFile("YouWin.png");
 	Sprite youwin(yw);
 	youwin.setPosition(100, 210);
 
 	Texture yl;
-	yl.loadFromFile("youlose.png");
+	yl.loadFromFile("YouLose.png");
 	Sprite youlose(yl);
 	youlose.setPosition(100, 210);
 
